@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" href="./css/jquery.mobile-1.4.5.min.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="./js/jquery-2.1.4.min.js"></script>
+        <script src="./js/jquery.mobile-1.4.5.min.js"></script>
+        <title>Hello World</title>
+    </head>
+    <body>
+    <div id="welcomepage" data-role="page" style="background:url(./img/LOGO.jpg) 50% 0 no-repeat;background-size:cover">
+    </div><!-- /page -->
+
+    <div data-role="page" id="mainpage">
+        <div data-role="header" data-theme="b">
+        <h3>名都季刊</h3>
+        </div><!-- /header -->
+      <div role="main" class="ui-content">
+            <a href="#"><img src="./img/picture1.png" class="ui-li-icon"></a>
+        <!-- listview example -->
+        <div>
+
+                <ul data-role="listview" data-inset="true">
+                  <li data-role="list-divider" role="heading">近期文章</li>
+                  <li>
+                    <a href="#page3" data-transition="slide">
+                      <img src="./img/logo.png">
+                      <h3>Monaco</h3>
+                      <p>文章内容....</p>
+                      <p class="ui-li-aside"><strong>1</strong> image</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="./img/logo.png">
+                      <h3>文章标题二</h3>
+                      <p>文章内容....</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                    <img src="./img/logo.png">
+                      <h3>文章标题三</h3>
+                      <p>文章内容....</p>
+                    </a>
+                  </li>
+                </ul>
+
+        </div>
+        </div><!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="b">
+            <div data-role="navbar">
+            <ul>
+            <li><a data-role="button" data-icon="plus" href="#cities">城市</a></li>
+            <li><a data-role="button" data-icon="plus" href="magazine">杂志</a></li></li>
+            <li><a data-role="button" data-icon="plus" href="#mainpage">首页</a></li>
+            <li><a data-role="button" data-icon="plus" href="#config">设置</a></li>
+            </ul>
+            </div>
+        </div><!-- /footer -->
+    </div><!-- /page1 -->
+
+    <div data-role="page" id="cities">
+        <div data-role="header" data-theme="b">
+        <h3>名都季刊</h3>
+        </div><!-- /header -->
+           <div>
+                <ul data-role="listview" data-inset="true">
+                  <li data-role="list-divider" role="heading"><h2>请选择城市</h2></li>
+                  <li>
+                    <a href="#page3" data-transition="slide" style="">
+                      <img src="./img/city1.png">
+                       <h3>芝加哥Chicago</h3>
+                       <p>文章内容....</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="./img/city2.png">
+                      <h3>纽约NewYork</h3>
+                      <p>文章内容....</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                    <img src="./img/city3.png">
+                      <h3>旧金山San Francisco</h3>
+                      <p>文章内容....</p>
+                    </a>
+                  </li>
+                </ul>
+
+        </div>
+        <div data-role="footer" data-position="fixed" data-theme="b">
+            <div data-role="navbar">
+            <ul>
+            <li><a data-role="button" data-icon="plus" href="#cities">城市</a></li>
+            <li><a data-role="button" data-icon="plus" href="magazine">杂志</a></li></li>
+            <li><a data-role="button" data-icon="plus" href="#mainpage">首页</a></li>
+            <li><a data-role="button" data-icon="plus" href="#config">设置</a></li>
+            </ul>
+            </div>
+        </div><!-- /footer -->
+    </div><!-- /cities -->
+
+
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
