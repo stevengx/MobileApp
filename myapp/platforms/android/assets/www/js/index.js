@@ -51,7 +51,7 @@ var app = {
 app.initialize();
 
 $(document).on("pageinit","#welcomepage",function(){
-  $("div").on("tap",function(){
-    $.mobile.changePage("#mainpage",{transition:"slide"});
+  $("#welcomepage").on("tap",function(){
+    $.mobile.changePage("#cities",{transition:"slide"});
   });                       
 });

@@ -36,107 +36,203 @@
         <link rel="stylesheet" href="./css/style.css">
         <script src="./js/jquery-2.1.4.min.js"></script>
         <script src="./js/jquery.mobile-1.4.5.min.js"></script>
-        <title>Hello World</title>
-    </head>
-    <body>
-    <div id="welcomepage" data-role="page" style="background:url(./img/LOGO.jpg) 50% 0 no-repeat;background-size:cover">
-    </div><!-- /page -->
+        <script src="./js/stepcarousel.js" type="text/javascript"></script>
+        <script type="text/javascript">
+        stepcarousel.setup({
+        galleryid: 'mygallery', //id of carousel DIV
+        beltclass: 'belt', //class of inner "belt" DIV containing all the panel DIVs
+        panelclass: 'panel', //class of panel DIVs each holding content
+        panelbehavior: {speed:300, wraparound:false, persist:true},
+        defaultbuttons: {enable: true, moveby: 1, leftnav: ['./img/butt-left.gif', 0, 64], rightnav: ['./img/butt-right.gif', -11, 64]},
+        statusvars: ['statusA', 'statusB', 'statusC'], //register 3 variables that contain current panel (start), current panel (last), and total panels
+        contenttype: ['inline'], //content setting ['inline'] or ['external', 'path_to_external_file']
+        oninit:function(){
+        isloaded=true
+        }
+        })
+        </script>
+        <title>名都季刊</title>
+        </head>
+        <body>
+        <div id="welcomepage" data-role="page" style="background:url(./img/LOGO.jpg) 50% 0 no-repeat;background-size:cover">
+        </div><!-- /welcomepage -->
+    
+        <div data-role="page" id="cities">
+          <div data-role="header" data-theme="b">
+            <h3>名都季刊</h3>
+          </div><!-- /header -->
+          <div>
+            <ul data-role="listview" data-inset="true">
+              <li data-role="list-divider" role="heading"><h2>Select the city</h2></li>
+              <li>
+                <a href="#magazine_chicagao" data-transition="slide">
+                  <img src="./img/city1.png">
+                  <h3>芝加哥Chicago</h3>
+                  <p>Recent Content....</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./img/city2.png">
+                  <h3>纽约NewYork</h3>
+                  <p>Recent Content...</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./img/city3.png">
+                  <h3>旧金山San Francisco</h3>
+                  <p>Recent Content...</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div><!-- /cities -->
 
-    <div data-role="page" id="mainpage">
-        <div data-role="header" data-theme="b">
-        <h3>名都季刊</h3>
-        </div><!-- /header -->
-      <div role="main" class="ui-content">
-            <a href="#"><img src="./img/picture1.png" class="ui-li-icon"></a>
-        <!-- listview example -->
-        <div>
+        <div data-role="page" id="magazine_chicagao">
+          <div data-role="header" data-theme="b">
+            <h3>名都季刊</h3>
+          </div><!-- /header -->
+          <div data-role="content">
+          <h3>LOFT 新生活</h3>            
+            <div id="mygallery" class="stepcarousel">
+              <div class="belt" id="displaycssbelt">
 
-                <ul data-role="listview" data-inset="true">
-                  <li data-role="list-divider" role="heading">近期文章</li>
-                  <li>
-                    <a href="#page3" data-transition="slide">
-                      <img src="./img/logo.png">
-                      <h3>Monaco</h3>
-                      <p>文章内容....</p>
-                      <p class="ui-li-aside"><strong>1</strong> image</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="./img/logo.png">
-                      <h3>文章标题二</h3>
-                      <p>文章内容....</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                    <img src="./img/logo.png">
-                      <h3>文章标题三</h3>
-                      <p>文章内容....</p>
-                    </a>
-                  </li>
+                <div class="panel">
+                  <div class="subfeature">
+                    <a href="#"><img src="./img/pighead640b-200x150.jpg" alt="pig-head-pozole" class="post-image" width="200" height="150" /></a>
+                    <div class="subfeature-txt"><h2><a href="#article_chicago">Magazine_Chicago_1</a></h2></div>
+                  </div>
+                </div>    
+
+                <div class="panel">
+                  <div class="subfeature">
+                    <a href="#"><img src="./img/weisswurst640-2-200x150.jpg" alt="weisswurst-pretzels-and-beer-for-breakfast" class="post-image" width="200" height="150" /></a>
+                    <div class="subfeature-txt">
+                      <h2><a href="#">Magazine_Chicago_2</a></h2>
+                    </div>
+                  </div>
+                </div>    
+
+                <div class="panel">
+                  <div class="subfeature">
+                    <a href="#"><img src="./img/drpepperfeast-200x150.jpg" alt="cooking-with-dr-pepper" class="post-image" width="200" height="150" /></a>
+                    <div class="subfeature-txt">
+                      <h2><a href="#">Magazine_Chicago_3</a></h2>
+                    </div>
+                  </div>
+                </div>    
+  
+              </div>
+            </div>
+          </div>
+          <div data-role="footer" data-position="fixed" data-theme="b">
+            <div data-role="navbar" data-position="fixed">
+              <ul>
+                <li><a data-role="button" data-icon="home" href="#cities">City</a></li>
+                <li><a data-role="button" data-icon="info" href="magazine_chicago">Magazine</a></li></li>
+                <li><a data-role="button" data-icon="grid" href="#article_chicago">Article</a></li>
+                <li><a data-role="button" data-icon="gear" href="#config">Config</a></li>
+              </ul>
+            </div>
+          </div><!-- /footer -->
+        </div><!-- /magazine_chicagao -->
+    
+        <div data-role="page" id="article_chicago">
+          <div data-role="header" data-theme="b">
+            <h3>名都季刊</h3>
+          </div><!-- /header -->
+          <div role="main" class="ui-content">
+            <a href="#article_chicago_1"><img src="./img/picture1.png" class="ui-li-icon"></a>
+            <!-- listview example -->
+            <div>
+              <ul data-role="listview" data-inset="true">
+                <li data-role="list-divider" role="heading">Recent Article</li>
+                <li>
+                  <a href="#article_chicago_1" data-transition="slide">
+                    <img src="./img/article2.png">
+                    <h3>LOFT 新生活</h3>
+                    <p>摩天大楼是芝加哥的代名词,高低起伏的天际线因为这些独特建筑设计....</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="./img/article3.png">
+                    <h3>LINKED IN</h3>
+                    <p>袖扣占据不足方寸之地，但足以显示你的品味如何。我们挑选了几对....</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                  <img src="./img/article4.png">
+                    <h3>艺术馆还是酒店，傻傻分不清楚？</h3>
+                    <p>A酒店为了营造更优雅更有趣的氛围，对于上等艺术品的投资越....</p>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div><!-- /content -->
+          <div data-role="footer" data-position="fixed" data-theme="b">
+              <div data-role="navbar" data-position="fixed">
+                <ul>
+                  <li><a data-role="button" data-icon="home" href="#cities">City</a></li>
+                  <li><a data-role="button" data-icon="info" href="magazine_chicago">Magazine</a></li></li>
+                  <li><a data-role="button" data-icon="grid" href="#article_chicago">Article</a></li>
+                  <li><a data-role="button" data-icon="gear" href="#config">Config</a></li>
                 </ul>
+              </div>
+          </div><!-- /footer -->
+        </div><!-- /article_chicago -->
 
-        </div>
-        </div><!-- /content -->
-        <div data-role="footer" data-position="fixed" data-theme="b">
-            <div data-role="navbar">
+        <div data-role="page" id="article_chicago_1">
+          <div data-role="header" data-theme="b">
+            <h3>名都季刊</h3>
+          </div><!-- /header -->
+          <div data-role="content">
+            <h1>你的意式祖母</h1>
+              <img src="./img/art1_picture0.jpg">
+              <h4>Formento’s</h4>
+              <p>MQ的忠实读者及吃客们都应该已相当熟悉West Loop身为“吃货天堂”的事实。年初开幕的Formento’s又为兰道弗街增添一位生力军。这家意式餐厅是拥有业界超高评价的Balena及The Bristol背后集团的最新项目。</p>
+              <img src="./img/art1_picture1.jpg">
+              <p>比起许多新餐厅，Formento’s的装修相较之下朴实许多，砖墙、沙发卡座，简单的四方桌，上方南瓜色的圆形吊灯释放着温暖、轻松的气氛。“记得小时候的每个周日晚上，我们69全家会聚集在祖母家，品尝祖传了好几代的传统意大利家常菜，”老板John Ross说，“我们希望Formento’s也能成为许多家庭回忆中的一部分。”环伺我们周遭的客人，的确有不少家庭带着一家老小来晚餐，其中一桌全家集体穿了芝加哥黑鹰队的球衣，想必是赶在球赛前来此饱餐一顿。</p>
+              <img src="./img/art1_picture2.jpg">
+              <p>前菜部分我们品尝了烤挪威龙虾，片半的虾肉上布满各式香料、柠檬面包屑，一用叉子可以取起整条虾肉，肉质Q弹鲜美，蒜味奶油酱的香味满布口中，一下子就被扫地精光。</p>
+              <img src="./img/art1_picture3.jpg">
+              <p>到意式餐厅当然不免俗地要品尝意面，我们选择了简单的伏特加茄汁意面，此道菜证明了即便是没有华丽食材的  家常料理，依然可以美味地令人发指。自家餐厅制作的宽管面劲道十足，吸取了酸甜的番茄酱汁，稍微融化的马斯卡  邦奶酪带来粘稠感，一入口竟有些许豆瓣酱的味道，是道极度满足的comfort food。</p>
+              <img src="./img/art1_picture4.jpg" >
+              <p>到“跳嘴肉”也是传统的意菜之一，这里以鹌鹑肉取代小牛肉，外层包裹上意式火腿，煎到表皮香脆，搭配榛果及烟熏花菜，味道丰富，鹌鹑肉口感弹嫩多汁，给了我们十足惊喜。</p>
+             <img src="./img/art1_picture5.jpg">
+             <p>随后上桌的帕马森烤鸡分量之大令人瞠目结舌，建议多人分享或在你饥饿到可以吃下一头牛的状况再考虑点它，被片平的半鸡裹着面包屑，上头豪迈地淋上块状番茄浓酱，马苏里拉奶酪散布在一片红的酱汁上，宛如往四方蔓延的地图线。鸡肉滑嫩，看似浓郁的酱汁味道鲜美，牵丝的奶酪让所有食物美味加乘。</p>    
+             <img src="./img/art1_picture6.jpg" >
+             <p>最后，不品尝甜点怎么能算是到过意式餐厅？这里的榛果巧克力蛋糕分量同样惊人，美味程度让人暂时能忘掉所有烦心事。如果你想领略意式家常菜，Formento’s就像你不曾有过的意大利祖母</p>
+          </div>
+          <div data-role="content">
+           <h4>推荐菜式：</h4>
+           <p>烤挪威龙虾 Shrimp Scampi</p>
+           <p>伏特加茄汁意面 Rigatoni Alla Vodka</p>
+           <p>鹌鹑跳嘴肉 Quail Saltimbocca</p>             
+           <p>帕马森烤鸡 Half Chicken Parmesan</p>
+           <p>榛果巧克力蛋糕 Formento’s Chocolate Cake</p>         
+           <p>地址：925 W. Randolph St.</p>
+           
+           <p>电话：312.690.7295</p>
+           <p>网址：<a her="http://www.formentos.com/#about">http://www.formentos.com/#about</a></p>
+
+           <p>撰文／Chou, Yu-Jin</p>
+          </div>
+            <div data-role="footer" data-position="fixed" data-theme="b">
+            <div data-role="navbar" data-position="fixed">
             <ul>
-            <li><a data-role="button" data-icon="plus" href="#cities">城市</a></li>
-            <li><a data-role="button" data-icon="plus" href="magazine">杂志</a></li></li>
-            <li><a data-role="button" data-icon="plus" href="#mainpage">首页</a></li>
-            <li><a data-role="button" data-icon="plus" href="#config">设置</a></li>
+            <li><a data-role="button" data-icon="home" href="#cities">City</a></li>
+            <li><a data-role="button" data-icon="info" href="magazine_chicago">Magazine</a></li></li>
+            <li><a data-role="button" data-icon="grid" href="#article_chicago">Article</a></li>
+            <li><a data-role="button" data-icon="gear" href="#config">Config</a></li>
             </ul>
             </div>
-        </div><!-- /footer -->
-    </div><!-- /page1 -->
+          </div><!-- /footer -->
+        </div><!-- /article_chicago_1 -->
 
-    <div data-role="page" id="cities">
-        <div data-role="header" data-theme="b">
-        <h3>名都季刊</h3>
-        </div><!-- /header -->
-           <div>
-                <ul data-role="listview" data-inset="true">
-                  <li data-role="list-divider" role="heading"><h2>请选择城市</h2></li>
-                  <li>
-                    <a href="#page3" data-transition="slide" style="">
-                      <img src="./img/city1.png">
-                       <h3>芝加哥Chicago</h3>
-                       <p>文章内容....</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="./img/city2.png">
-                      <h3>纽约NewYork</h3>
-                      <p>文章内容....</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                    <img src="./img/city3.png">
-                      <h3>旧金山San Francisco</h3>
-                      <p>文章内容....</p>
-                    </a>
-                  </li>
-                </ul>
-
-        </div>
-        <div data-role="footer" data-position="fixed" data-theme="b">
-            <div data-role="navbar">
-            <ul>
-            <li><a data-role="button" data-icon="plus" href="#cities">城市</a></li>
-            <li><a data-role="button" data-icon="plus" href="magazine">杂志</a></li></li>
-            <li><a data-role="button" data-icon="plus" href="#mainpage">首页</a></li>
-            <li><a data-role="button" data-icon="plus" href="#config">设置</a></li>
-            </ul>
-            </div>
-        </div><!-- /footer -->
-    </div><!-- /cities -->
-
-
-
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>
