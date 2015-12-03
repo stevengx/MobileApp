@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" href="../css/jquery.mobile-1.4.5.min.css">
+        <link rel="stylesheet" href="../css/jquery.excoloSlider.css">
+        <link rel="stylesheet" href="../css/style.css">        
+        <script src="../js/jquery-2.1.4.min.js"></script>
+        <script src="../js/jquery.mobile-1.4.5.min.js"></script>
+
+        <title>名都季刊</title>
+        </head>
+        <body>
+
+        <div data-role="page" id="magazine_chicagao">
+          <script src="../js/jquery.excoloSlider.js"></script>
+          <script type="text/javascript">
+          $(function () {
+              $("#slider").excoloSlider();
+          });</script>
+          <div data-role="header" data-theme="b">
+            <h3>名都季刊</h3>
+          </div><!-- /header -->
+          <div data-role="content">
+                <div id="slider" style="width:300px">
+                    <a href="#magazine_chicago_1" data-transition="slide"><img src="../img/magazine_cover1.jpg" ></a>
+                    <img src="../img/magazine_cover2.JPG">
+                    <img src="../img/magazine_cover3.JPG">    
+                </div>
+              <script type="text/javascript"></script>
+          </div>
+          <div data-role="footer" data-position="fixed" data-theme="b">
+            <div data-role="navbar" data-position="fixed">
+              <ul>
+                <li><a data-role="button" data-icon="home" href="../cities.html">City</a></li>
+                <li><a data-role="button" data-icon="info" href="magazine_chicago.html">Magazine</a></li></li>
+                <li><a data-role="button" data-icon="grid" href="../article/article_chicago.html">Article</a></li>
+                <li><a data-role="button" data-icon="gear" href="#config">Config</a></li>
+              </ul>
+            </div>
+          </div><!-- /footer -->
+        </div><!-- /magazine_chicagao -->
+    
+        <div id="magazine_chicago_1" data-role="page">
+        <iframe src="./generic/web/viewer.html?file=test.pdf" width="100%" height="800"></iframe>
+        </div><!-- /magazinetest -->
+
+        <script type="text/javascript" src="../js/index.js"></script>        
+    </body>
+</html>
