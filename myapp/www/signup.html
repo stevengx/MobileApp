@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+   
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="css/jquery.excoloSlider.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Create an Account</title>
+	<script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+	<div data-role="page" id="signup_page">
+		<div data-role="header" data-theme="b">
+            <h3>名都季刊</h3>
+			<a href="login.html" class="button button-clear button-royal">Login</a>
+        </div><!-- /header -->
+    <div class="padding" style="margin-top:15px;">
+        <label class="item-input">
+            <span class="input-label">Full Name</span>
+            <input type="text" placeholder="Sundaravel" id="fullname">
+        </label>
+        <label class="item-input">
+            <span class="input-label">Email</span>
+            <input type="email" placeholder="email@domain.com" id="email">
+        </label>
+        <label class="item-input">
+            <span class="input-label">Password</span>
+            <input type="password" placeholder="password" id="password">
+        </label>
+        <label class="item-input">
+            <button class="button button-block button-positive" id="signup">Create an Account</button>
+        </label>       
+    </div>
+	
+	<div data-role="footer" data-position="fixed" data-theme="b">
+        <div data-role="navbar" data-position="fixed">
+            <ul>
+                <li><a data-role="button" data-icon="home" href="cities.html">City</a></li>
+                <li><a data-role="button" data-icon="info" href="magazine/magazine_chicago.html">Magazine</a></li></li>
+                <li><a data-role="button" data-icon="grid" href="article/article_chicago.html">Article</a></li>
+                <li><a data-role="button" data-icon="gear" href="login.html">Personal</a></li>
+            </ul>
+        </div>
+    </div><!-- /footer -->
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jq.js"></script>
+    <script type="text/javascript" src="js/auth.js"></script>
+	<script src="js/jquery.excoloSlider.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+	</div><!-- /signup_page -->
+</body>
+
+</html>

@@ -7489,6 +7489,7 @@ function webViewerInitialized() {
 
   document.getElementById('sidebarToggle').addEventListener('click',
     function() {
+      parent.window.location.href="../../magazine_chicago.html"
       this.classList.toggle('toggled');
       outerContainer.classList.add('sidebarMoving');
       outerContainer.classList.toggle('sidebarOpen');
